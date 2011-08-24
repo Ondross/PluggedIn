@@ -2,3 +2,21 @@
   Place all the styles related to the matching controller here.
   They will automatically be included in application.css.
 */
+
+table.pretty {
+  margin: 1em 1em 1em 2em;
+  background: whitesmoke;
+  border-collapse: collapse;
+}
+table.pretty th, table.pretty td {
+  border: 1px silver solid;
+  padding: .3em;
+}
+table.pretty th {
+  background: gainsboro;
+  text-align: left;
+}
+table.pretty caption {
+  margin-left: inherit;
+  margin-right: inherit;
+}

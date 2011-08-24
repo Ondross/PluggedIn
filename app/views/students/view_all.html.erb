@@ -1,0 +1,90 @@
+<!-- not all fields will be the same here, needs to be fixed -->
+
+<% if user_signed_in? %>
+<% if current_user.email == 'srizkallah@comcast.net' or current_user.email == 'aheine@olin.edu' %>
+
+	<div class="heading"><h1>Listing contacts</h1></div>
+
+	<div id="contact_list">
+	<table>
+	  <tr>
+		<th>First Name</th>
+		<th>Last Name</th>
+		<th>Address</th>
+		<th>E-mail</th>
+		<th>Home phone</th>
+		<th>Cell</th>
+		<th>Dad work</th>
+		<th>Mom work</th>
+		<th>Dad cell</th>
+		<th>Mom cell</th>
+		<th>Date of birth</th>
+		<th>Instruments played</th>
+		<th>Sessions participated in</th>
+		<th>Parent names</th>
+		<th></th>
+		<th></th>
+		<th></th>
+	  </tr>
+
+	<% @contacts.each do |contact| %>
+	  <tr>
+		<td><%= contact.name %></td>
+		<td><%= contact.last_name %></td>
+		<td><%= contact.address %></td>
+		<td><%= contact.email %></td>
+		<td><%= contact.home_phone %></td>
+		<td><%= contact.cell %></td>
+		<td><%= contact.dad_work %></td>
+		<td><%= contact.mom_work %></td>
+		<td><%= contact.dad_cell %></td>
+		<td><%= contact.mom_cell %></td>
+		<td><%= contact.date_of_birth %></td>
+		<td><%= contact.instrument %></td>
+		<td><%= contact.parent_names %></td>
+		<td><%= link_to 'Show', contact %></td>
+		<td><%= link_to 'Edit', eval("edit_#{contact.class.name.underscore}_path(contact)") %></td>
+		<td><%= link_to 'Destroy', contact, :confirm => 'Are you sure?', :method => :delete %></td>
+	  </tr>
+	<% end %>
+	  <tr>
+		<td><%= form_tag :search do %>
+	  <%= text_field_tag "name", "" %></td>
+		<td><%= text_field_tag "address", "" %></td>
+		<td><%= text_field_tag "home_phone", "" %></td>
+		<td><%= text_field_tag "cell", "" %></td>
+		<td><%= text_field_tag "dad_work", "" %></td>
+		<td><%= text_field_tag "mom_work", "" %></td>
+		<td><%= text_field_tag "dad_cell", "" %></td>
+		<td><%= text_field_tag "mom_cell", "" %></td>
+		<td><%= text_field_tag "dob", "" %></td>
+		<td><%= text_field_tag "instrument", "" %></td>
+		<td><%= text_field_tag "parent_names", "" %></td>
+	  </tr>
+		<tr><td><%= submit_tag "Go" %>
+	<% end %></td></tr>
+	</table>
+	</div>
+	<br />
+
+	<%= link_to 'New Contact', :edit_all %>
+	<p> Phone numbers not searchable </p>
+	
+	<div id="user_nav">
+	<% if user_signed_in? %>
+		Signed in as <%= current_user.email %>.  Not You?
+		<%= link_to "Sign out", destroy_user_session_path %>
+	<% else %>
+		<%= link_to "Sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %>.
+	<% end %>
+</div>
+<% else %>
+	<div class = 'error'>
+	<p> This page does not exist </p>
+	</div>
+<% end %>
+<% else %>
+	<div class = 'error'>
+	<p> This page does not exist </p>
+	</div>
+<% end %>
