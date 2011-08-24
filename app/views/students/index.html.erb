@@ -1,0 +1,93 @@
+<h1>Listing students</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Instrument</th>
+    <th>Address</th>
+    <th>Town</th>
+    <th>Zip</th>
+    <th>Home phone</th>
+    <th>Cell</th>
+    <th>Dad work</th>
+    <th>Mom work</th>
+    <th>Dad cell</th>
+    <th>Mom cell</th>
+    <th>Date of birth</th>
+    <th>Age</th>
+    <th>Mom name</th>
+    <th>Dad name</th>
+    <th>Parent names</th>
+    <th>Email</th>
+    <th>Last name</th>
+    <th>Notes</th>
+    <th>Conditions</th>
+    <th>Medications</th>
+    <th>Parent email</th>
+    <th>Experience</th>
+    <th>Lessons</th>
+    <th>Favorite bands</th>
+    <th>Music style</th>
+    <th>Write music</th>
+    <th>Switching instruments</th>
+    <th>Additional info</th>
+    <th>Parent rep</th>
+    <th>Concert volunteer</th>
+    <th>Joining board</th>
+    <th>Donating scholarship</th>
+    <th>Community engage</th>
+    <th>Jamathon</th>
+    <th>Spring fair</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @students.each do |student| %>
+  <tr>
+    <td><%= student.name %></td>
+    <td><%= student.instrument %></td>
+    <td><%= student.address %></td>
+    <td><%= student.town %></td>
+    <td><%= student.zip %></td>
+    <td><%= student.home_phone %></td>
+    <td><%= student.cell %></td>
+    <td><%= student.dad_work %></td>
+    <td><%= student.mom_work %></td>
+    <td><%= student.dad_cell %></td>
+    <td><%= student.mom_cell %></td>
+    <td><%= student.date_of_birth %></td>
+    <td><%= student.age %></td>
+    <td><%= student.mom_name %></td>
+    <td><%= student.dad_name %></td>
+    <td><%= student.parent_names %></td>
+    <td><%= student.email %></td>
+    <td><%= student.last_name %></td>
+    <td><%= student.notes %></td>
+    <td><%= student.conditions %></td>
+    <td><%= student.medications %></td>
+    <td><%= student.parent_email %></td>
+    <td><%= student.experience %></td>
+    <td><%= student.lessons %></td>
+    <td><%= student.favorite_bands %></td>
+    <td><%= student.music_style %></td>
+    <td><%= student.write_music %></td>
+    <td><%= student.switching_instruments %></td>
+    <td><%= student.additional_info %></td>
+    <td><%= student.parent_rep %></td>
+    <td><%= student.concert_volunteer %></td>
+    <td><%= student.joining_board %></td>
+    <td><%= student.donating_scholarship %></td>
+    <td><%= student.community_engage %></td>
+    <td><%= student.jamathon %></td>
+    <td><%= student.spring_fair %></td>
+    <td><%= link_to 'Show', student %></td>
+    <td><%= link_to 'Edit', edit_student_path(student) %></td>
+    <td><%= link_to 'Destroy', student, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Student', new_student_path %>

@@ -1,0 +1,161 @@
+<%= form_for(@student) do |f| %>
+  <% if @student.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@student.errors.count, "error") %> prohibited this student from being saved:</h2>
+
+      <ul>
+      <% @student.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :instrument %><br />
+    <%= f.text_field :instrument %>
+  </div>
+  <div class="field">
+    <%= f.label :address %><br />
+    <%= f.text_field :address %>
+  </div>
+  <div class="field">
+    <%= f.label :town %><br />
+    <%= f.text_field :town %>
+  </div>
+  <div class="field">
+    <%= f.label :zip %><br />
+    <%= f.text_field :zip %>
+  </div>
+  <div class="field">
+    <%= f.label :home_phone %><br />
+    <%= f.text_field :home_phone %>
+  </div>
+  <div class="field">
+    <%= f.label :cell %><br />
+    <%= f.text_field :cell %>
+  </div>
+  <div class="field">
+    <%= f.label :dad_work %><br />
+    <%= f.text_field :dad_work %>
+  </div>
+  <div class="field">
+    <%= f.label :mom_work %><br />
+    <%= f.text_field :mom_work %>
+  </div>
+  <div class="field">
+    <%= f.label :dad_cell %><br />
+    <%= f.text_field :dad_cell %>
+  </div>
+  <div class="field">
+    <%= f.label :mom_cell %><br />
+    <%= f.text_field :mom_cell %>
+  </div>
+  <div class="field">
+    <%= f.label :date_of_birth %><br />
+    <%= f.text_field :date_of_birth %>
+  </div>
+  <div class="field">
+    <%= f.label :age %><br />
+    <%= f.number_field :age %>
+  </div>
+  <div class="field">
+    <%= f.label :mom_name %><br />
+    <%= f.text_field :mom_name %>
+  </div>
+  <div class="field">
+    <%= f.label :dad_name %><br />
+    <%= f.text_field :dad_name %>
+  </div>
+  <div class="field">
+    <%= f.label :parent_names %><br />
+    <%= f.text_field :parent_names %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :last_name %><br />
+    <%= f.text_field :last_name %>
+  </div>
+  <div class="field">
+    <%= f.label :notes %><br />
+    <%= f.text_area :notes %>
+  </div>
+  <div class="field">
+    <%= f.label :conditions %><br />
+    <%= f.text_area :conditions %>
+  </div>
+  <div class="field">
+    <%= f.label :medications %><br />
+    <%= f.text_area :medications %>
+  </div>
+  <div class="field">
+    <%= f.label :parent_email %><br />
+    <%= f.text_field :parent_email %>
+  </div>
+  <div class="field">
+    <%= f.label :experience %><br />
+    <%= f.text_field :experience %>
+  </div>
+  <div class="field">
+    <%= f.label :lessons %><br />
+    <%= f.check_box :lessons %>
+  </div>
+  <div class="field">
+    <%= f.label :favorite_bands %><br />
+    <%= f.text_area :favorite_bands %>
+  </div>
+  <div class="field">
+    <%= f.label :music_style %><br />
+    <%= f.text_field :music_style %>
+  </div>
+  <div class="field">
+    <%= f.label :write_music %><br />
+    <%= f.check_box :write_music %>
+  </div>
+  <div class="field">
+    <%= f.label :switching_instruments %><br />
+    <%= f.check_box :switching_instruments %>
+  </div>
+  <div class="field">
+    <%= f.label :additional_info %><br />
+    <%= f.text_area :additional_info %>
+  </div>
+  <div class="field">
+    <%= f.label :parent_rep %><br />
+    <%= f.check_box :parent_rep %>
+  </div>
+  <div class="field">
+    <%= f.label :concert_volunteer %><br />
+    <%= f.check_box :concert_volunteer %>
+  </div>
+  <div class="field">
+    <%= f.label :joining_board %><br />
+    <%= f.check_box :joining_board %>
+  </div>
+  <div class="field">
+    <%= f.label :donating_scholarship %><br />
+    <%= f.check_box :donating_scholarship %>
+  </div>
+  <div class="field">
+    <%= f.label :community_engage %><br />
+    <%= f.check_box :community_engage %>
+  </div>
+  <div class="field">
+    <%= f.label :jamathon %><br />
+    <%= f.check_box :jamathon %>
+  </div>
+  <div class="field">
+    <%= f.label :spring_fair %><br />
+    <%= f.check_box :spring_fair %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
