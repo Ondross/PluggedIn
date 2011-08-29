@@ -1,0 +1,33 @@
+	@first = params[:first].downcase
+	@last = params[:last].downcase
+	@address1 = params[:address1].downcase
+	@home_email = params[:home_email].downcase
+	@others = Other.all
+	@results = []
+	if params[:andor]
+		@andor = params[:andor].downcase
+	end
+
+	#"AND" search
+	if @andor == 'and'
+		@others.each do |other|
+			if other.first.downcase.include? @first and other.address1.downcase.include? @address1 and other.home_email.downcase.include? @home_email and other.last.downcase.include? @last
+				@results << other
+			end
+		end
+	else  # makes "OR" the default search
+	
+	#"OR" search
+
+		@others.each do |other|
+			if @first != '' and other.first.downcase.include? @first  #Check for empty to avoid false positive ("" does include "")
+				@results << other
+			elsif @last != '' and other.last.downcase.include? @last
+				@results << other
+			elsif @address1 != '' and other.address1.downcase.include? @address1
+				@results << other
+			elsif @home_email != '' and other.home_email.downcase.include? @home_email
+				@results << other
+			end
+		end
+	end

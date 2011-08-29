@@ -1,0 +1,225 @@
+<%= form_for(@other) do |f| %>
+  <% if @other.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@other.errors.count, "error") %> prohibited this other from being saved:</h2>
+
+      <ul>
+      <% @other.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+(*)Required <br>
+  <div class="field">
+    <%= f.label :first %>*<br />
+    <%= f.text_field :first %>
+  </div>
+  <div class="field">
+    <%= f.label :last %>*<br />
+    <%= f.text_field :last %>
+  </div>
+  <div class="field">
+    <%= f.label :job %><br />
+    <%= f.text_field :job %>
+  </div>
+  <div class="field">
+    <%= f.label :organization %><br />
+    <%= f.text_field :organization %>
+  </div>
+  <div class="field">
+    <%= f.label :work_phone %><br />
+    <%= f.text_field :work_phone %>
+  </div>
+  <div class="field">
+    <%= f.label :mobile_phone %><br />
+    <%= f.text_field :mobile_phone %>
+  </div>
+  <div class="field">
+    <%= f.label :home_phone %><br />
+    <%= f.text_field :home_phone %>
+  </div>
+  <div class="field">
+    <%= f.label :fax %><br />
+    <%= f.text_field :fax %>
+  </div>
+  <div class="field">
+    <%= f.label :work_email %><br />
+    <%= f.text_field :work_email %>
+  </div>
+  <div class="field">
+    <%= f.label :home_email %><br />
+    <%= f.text_field :home_email %>
+  </div>
+  <div class="field">
+    <%= f.label :address1 %><br />
+    <%= f.text_field :address1 %>
+  </div>
+  <div class="field">
+    <%= f.label :address2 %><br />
+    <%= f.text_field :address2 %>
+  </div>
+  <div class="field">
+    <%= f.label :address3 %><br />
+    <%= f.text_field :address3 %>
+  </div>
+  <div class="field">
+    <%= f.label :city %><br />
+    <%= f.text_field :city %>
+  </div>
+  <div class="field">
+    <%= f.label :state %><br />
+    <%= f.text_field :state %>
+  </div>
+  <div class="field">
+    <%= f.label :zip %><br />
+    <%= f.text_field :zip %>
+  </div>
+  <div class="field">
+    <%= f.label :country %><br />
+    <%= f.text_field :country %>
+  </div>
+  <div class="field">
+    <%= f.label :work_address1 %><br />
+    <%= f.text_field :work_address1 %>
+  </div>
+  <div class="field">
+    <%= f.label :work_address2 %><br />
+    <%= f.text_field :work_address2 %>
+  </div>
+  <div class="field">
+    <%= f.label :work_address3 %><br />
+    <%= f.text_field :work_address3 %>
+  </div>
+  <div class="field">
+    <%= f.label :work_city %><br />
+    <%= f.text_field :work_city %>
+  </div>
+  <div class="field">
+    <%= f.label :work_state %><br />
+    <%= f.text_field :work_state %>
+  </div>
+  <div class="field">
+    <%= f.label :work_zip %><br />
+    <%= f.text_field :work_zip %>
+  </div>
+  <div class="field">
+    <%= f.label :work_country %><br />
+    <%= f.text_field :work_country %>
+  </div>
+  <div class="field">
+    <%= f.label :notes %><br />
+    <%= f.text_area :notes %>
+  </div>
+
+<!-- Types of Contacts -->
+Check all of the following boxes that interest you:
+
+<table><tr>
+  <td><div class="field">
+    <%= f.label :fundraiser %>
+    <%= f.check_box :fundraiser %>
+  </div></td>
+  <td><div class="field">
+    <%= f.label :board_member %>
+    <%= f.check_box :board_member %>
+  </div></td>
+  <td><div class="field">
+    <%= f.label :community_contact %>
+    <%= f.check_box :community_contact %>
+  </div></td>
+  <td><div class="field">
+    <%= f.label :competition %>
+    <%= f.check_box :competition %>
+  </div></td>
+</tr><tr>
+
+  <td><div class="field">
+    <%= f.label :consultant %>
+    <%= f.check_box :consultant %>
+  </div></td><td>
+  <div class="field">
+    <%= f.label :cross_cultural %>
+    <%= f.check_box :cross_cultural %>
+  </div></td><td>
+  <div class="field">
+    <%= f.label :donor %>
+    <%= f.check_box :donor %>
+  </div></td><td>
+  <div class="field">
+    <%= f.label :foundation %>
+    <%= f.check_box :foundation %>
+  </div></td>
+  </tr><tr>
+
+  <td><div class="field">
+    <%= f.label :grantwriter %>
+    <%= f.check_box :grantwriter %>
+  </div></td><td>
+  <div class="field">
+    <%= f.label :music_contact %>
+    <%= f.check_box :music_contact %>
+  </div></td><td>
+  <div class="field">
+    <%= f.label :teacher %>
+    <%= f.check_box :teacher %>
+  </div></td><td>
+  <div class="field">
+    <%= f.label :raised_money_for %>
+    <%= f.check_box :raised_money_for %>
+  </div></td>
+  </tr><tr>
+
+  <td><div class="field">
+    <%= f.label :performed_for %>
+    <%= f.check_box :performed_for %>
+  </div></td><td>
+  <div class="field">
+    <%= f.label :partner %>
+    <%= f.check_box :partner %>
+  </div></td><td>
+  <div class="field">
+    <%= f.label :professional %>
+    <%= f.check_box :professional %>
+  </div></td><td>
+  <div class="field">
+    <%= f.label :plugged_in_teacher %>
+    <%= f.check_box :plugged_in_teacher %>
+  </div></td>
+  </tr><tr>
+
+  <td><div class="field">
+    <%= f.label :publicity %>
+    <%= f.check_box :publicity %>
+  </div></td><td>
+  <div class="field">
+    <%= f.label :speaker %>
+    <%= f.check_box :speaker %>
+  </div></td><td>
+  <div class="field">
+    <%= f.label :staff %>
+    <%= f.check_box :staff %>
+  </div></td><td>
+  <div class="field">
+    <%= f.label :tech %>
+    <%= f.check_box :tech %>
+  </div></td>
+  </tr><tr>
+  <td><div class="field">
+    <%= f.label :venue %>
+    <%= f.check_box :venue %>
+  </div></td><td>
+  <div class="field">
+    <%= f.label :volunteer %>
+    <%= f.check_box :volunteer %>
+  </div></td><td>
+  <div class="field">
+    <%= f.label :youth_arts_nonprofit %>
+    <%= f.check_box :youth_arts_nonprofit %>
+  </div></td>
+  </tr>
+  </table>
+  <div class="actions">
+    <%= f.submit "Sign Up"%>
+  </div>
+<% end %>

@@ -1,0 +1,2 @@
+module ProspectivesHelper
+end

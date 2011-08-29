@@ -1,0 +1,47 @@
+<h1>Listing prospectives</h1>
+
+<table>
+  <tr>
+    <th>First</th>
+    <th>Last</th>
+    <th>Email</th>
+    <th>Street1</th>
+    <th>String2</th>
+    <th>Street3</th>
+    <th>City</th>
+    <th>State</th>
+    <th>Zip</th>
+    <th>Home phone</th>
+    <th>Mobile phone</th>
+    <th>Dob</th>
+    <th>Instrument</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @prospectives.each do |prospective| %>
+  <tr>
+    <td><%= prospective.first %></td>
+    <td><%= prospective.last %></td>
+    <td><%= prospective.email %></td>
+    <td><%= prospective.street1 %></td>
+    <td><%= prospective.string2 %></td>
+    <td><%= prospective.street3 %></td>
+    <td><%= prospective.city %></td>
+    <td><%= prospective.state %></td>
+    <td><%= prospective.zip %></td>
+    <td><%= prospective.home_phone %></td>
+    <td><%= prospective.mobile_phone %></td>
+    <td><%= prospective.dob %></td>
+    <td><%= prospective.instrument %></td>
+    <td><%= link_to 'Show', prospective %></td>
+    <td><%= link_to 'Edit', edit_prospective_path(prospective) %></td>
+    <td><%= link_to 'Destroy', prospective, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Prospective', new_prospective_path %>

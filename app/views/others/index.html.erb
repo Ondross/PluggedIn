@@ -1,0 +1,66 @@
+<% if user_signed_in? %>
+<% if current_user.email == 'srizkallah@comcast.net' or current_user.email == 'aheine@olin.edu' %>
+
+	<div class="heading"><h1>Plugged In Contacts</h1><br>
+	<h2><%= link_to "Others", others_path %></h2></div>
+
+	<div id="other_list">
+
+	<% @others.each do |other| %>
+	<%= form_tag :others_search do %>
+
+	<table class = "pretty">
+		<tr><th>First Name: </th><td> <%= other.first %></td><td><%= text_field_tag "first", "" %></td></tr>
+		<tr><th>Last Name: </th><td> <%= other.last %></td><td><%= text_field_tag "last", "" %></td></tr>
+		<tr><th>Address: </th><td> <%= other.address1 %></td><td><%= text_field_tag "address1", "" %></td></tr>
+		<tr><th>E-mail: </th><td> <%= other.home_email %></td><td><%= text_field_tag "home_email", "" %></td></tr>
+		<tr><th>Home: </th><td> <%= other.home_phone %></td><td><%= text_field_tag "home_phone", "" %></td></tr>
+		<tr><th>Cell: </th><td> <%= other.mobile_phone %></td><td><%= text_field_tag "mobile_phone", "" %></td></tr>
+		<tr><th>Work Phone: </th><td> <%= other.work_phone %></td><td><%= text_field_tag "work_phone", "" %></td></tr>
+		<tr><th>Job:</th><td> <%= other.job %></td><td><%= text_field_tag "job", "" %></td></tr>
+		<tr><th>Fax: </th><td> <%= other.fax %></td><td><%= text_field_tag "fax", "" %></td></tr>
+
+	<tr><th>Type:</th><td><% Other.column_names.each do |column| %>
+		<% if other.send(column) == true %>
+			<%= column.humanize %>,
+		<% end %>
+	<% end %></td>
+	<td><%= text_field_tag "type", "" %> </td></tr>
+
+		<tr><td><%= link_to 'Show', other %>      
+		      <%= link_to 'Edit', edit_other_path(other) %>
+		      <%= link_to 'Destroy', other, :confirm => 'Are you sure?', :method => :delete %></td><td></td><td>
+		<% [ 'And', 'or' ].each do |andor| %>
+			<%= radio_button_tag 'andor', andor, @andor == andor %>
+			<%= andor.humanize %>
+		<% end %>
+		<%= submit_tag "Go" %></td></tr>	</table>
+	<% end %>
+	<% end %>
+
+
+	
+	</div>
+	<br />
+
+	<%= link_to 'New Other', new_other_path %>
+	<p> Phone numbers not searchable </p>
+	
+	<div id="user_nav">
+	<% if user_signed_in? %>
+		Signed in as <%= current_user.email %>.  Not You?
+		<%= link_to "Sign out", destroy_user_session_path %>
+	<% else %>
+		<%= link_to "Sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %>.
+	<% end %>
+</div>
+<% else %>
+	<div class = 'error'>
+	<p> This page does not exist </p>
+	</div>
+<% end %>
+<% else %>
+	<div class = 'error'>
+	<p> This page does not exist </p>
+	</div>
+<% end %>

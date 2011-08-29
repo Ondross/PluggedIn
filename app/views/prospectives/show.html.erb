@@ -1,0 +1,70 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>First:</b>
+  <%= @prospective.first %>
+</p>
+
+<p>
+  <b>Last:</b>
+  <%= @prospective.last %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @prospective.email %>
+</p>
+
+<p>
+  <b>Street1:</b>
+  <%= @prospective.street1 %>
+</p>
+
+<p>
+  <b>String2:</b>
+  <%= @prospective.string2 %>
+</p>
+
+<p>
+  <b>Street3:</b>
+  <%= @prospective.street3 %>
+</p>
+
+<p>
+  <b>City:</b>
+  <%= @prospective.city %>
+</p>
+
+<p>
+  <b>State:</b>
+  <%= @prospective.state %>
+</p>
+
+<p>
+  <b>Zip:</b>
+  <%= @prospective.zip %>
+</p>
+
+<p>
+  <b>Home phone:</b>
+  <%= @prospective.home_phone %>
+</p>
+
+<p>
+  <b>Mobile phone:</b>
+  <%= @prospective.mobile_phone %>
+</p>
+
+<p>
+  <b>Dob:</b>
+  <%= @prospective.dob %>
+</p>
+
+<p>
+  <b>Instrument:</b>
+  <%= @prospective.instrument %>
+</p>
+
+
+<%= link_to 'Edit', edit_prospective_path(@prospective) %> |
+<%= link_to 'Back', prospectives_path %>

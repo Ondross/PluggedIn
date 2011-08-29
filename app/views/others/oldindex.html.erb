@@ -1,0 +1,117 @@
+<h1>Listing others</h1>
+
+<table>
+  <tr>
+    <th>First</th>
+    <th>Last</th>
+    <th>Job</th>
+    <th>Organization</th>
+    <th>Work phone</th>
+    <th>Mobile phone</th>
+    <th>Home phone</th>
+    <th>Fax</th>
+    <th>Work email</th>
+    <th>Home email</th>
+    <th>Address1</th>
+    <th>Address2</th>
+    <th>Address3</th>
+    <th>City</th>
+    <th>State</th>
+    <th>Zip</th>
+    <th>Country</th>
+    <th>Work address1</th>
+    <th>Work address2</th>
+    <th>Work address3</th>
+    <th>Work city</th>
+    <th>Work state</th>
+    <th>Work zip</th>
+    <th>Work country</th>
+    <th>Notes</th>
+    <th>Fundraiser</th>
+    <th>Board member</th>
+    <th>Community contact</th>
+    <th>Competition</th>
+    <th>Consultant</th>
+    <th>Cross cultural</th>
+    <th>Donor</th>
+    <th>Foundation</th>
+    <th>Grantwriter</th>
+    <th>Music contact</th>
+    <th>Teacher</th>
+    <th>Raised money for</th>
+    <th>Performed for</th>
+    <th>Partner</th>
+    <th>Professional</th>
+    <th>Plugged in teacher</th>
+    <th>Publicity</th>
+    <th>Speaker</th>
+    <th>Staff</th>
+    <th>Tech</th>
+    <th>Venue</th>
+    <th>Volunteer</th>
+    <th>Youth arts nonprofit</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @others.each do |other| %>
+  <tr>
+    <td><%= other.first %></td>
+    <td><%= other.last %></td>
+    <td><%= other.job %></td>
+    <td><%= other.organization %></td>
+    <td><%= other.work_phone %></td>
+    <td><%= other.mobile_phone %></td>
+    <td><%= other.home_phone %></td>
+    <td><%= other.fax %></td>
+    <td><%= other.work_email %></td>
+    <td><%= other.home_email %></td>
+    <td><%= other.address1 %></td>
+    <td><%= other.address2 %></td>
+    <td><%= other.address3 %></td>
+    <td><%= other.city %></td>
+    <td><%= other.state %></td>
+    <td><%= other.zip %></td>
+    <td><%= other.country %></td>
+    <td><%= other.work_address1 %></td>
+    <td><%= other.work_address2 %></td>
+    <td><%= other.work_address3 %></td>
+    <td><%= other.work_city %></td>
+    <td><%= other.work_state %></td>
+    <td><%= other.work_zip %></td>
+    <td><%= other.work_country %></td>
+    <td><%= other.notes %></td>
+    <td><%= other.fundraiser %></td>
+    <td><%= other.board_member %></td>
+    <td><%= other.community_contact %></td>
+    <td><%= other.competition %></td>
+    <td><%= other.consultant %></td>
+    <td><%= other.cross_cultural %></td>
+    <td><%= other.donor %></td>
+    <td><%= other.foundation %></td>
+    <td><%= other.grantwriter %></td>
+    <td><%= other.music_contact %></td>
+    <td><%= other.teacher %></td>
+    <td><%= other.raised_money_for %></td>
+    <td><%= other.performed_for %></td>
+    <td><%= other.partner %></td>
+    <td><%= other.professional %></td>
+    <td><%= other.plugged_in_teacher %></td>
+    <td><%= other.publicity %></td>
+    <td><%= other.speaker %></td>
+    <td><%= other.staff %></td>
+    <td><%= other.tech %></td>
+    <td><%= other.venue %></td>
+    <td><%= other.volunteer %></td>
+    <td><%= other.youth_arts_nonprofit %></td>
+    <td><%= link_to 'Show', other %></td>
+    <td><%= link_to 'Edit', edit_other_path(other) %></td>
+    <td><%= link_to 'Destroy', other, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Other', new_other_path %>

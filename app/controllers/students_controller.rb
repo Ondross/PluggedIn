@@ -9,6 +9,13 @@ class StudentsController < ApplicationController
       format.xml  { render :xml => @students }
     end
   end
+
+  def homepage
+    
+    respond_to do |format|
+      format.html
+    end
+  end
   
   def contact_list
     @students = Student.all

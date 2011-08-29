@@ -1,12 +1,19 @@
 Pluggedin4::Application.routes.draw do
+  resources :others
+	  match 'others/search' => 'others#search', :as => :others_search
+
+  resources :prospectives
+	  match 'prospectives/search' => 'others#search', :as => :prospectives_search
+
   devise_for :users
 
   resources :students
-  root :to => 'students#index'
-	  match 'view_all' => 'students#view_all', :as => :view_all
+  root :to => 'students#homepage'
 	  match 'students/search' => 'students#search', :as => :search
 	  match 'edit_all' => 'students#edit_all', :as => :edit_all
 	  match 'contact_list' => 'students#contact_list', :as => :contact_list
+	  match 'homepage' => 'students#homepage', :as => :homepage
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

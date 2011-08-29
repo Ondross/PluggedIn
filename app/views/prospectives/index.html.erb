@@ -1,0 +1,59 @@
+<% if user_signed_in? %>
+<% if current_user.email == 'srizkallah@comcast.net' or current_user.email == 'aheine@olin.edu' %>
+
+	<div class="heading"><h1>Plugged In Contacts</h1><br>
+	<h2><%= link_to "prospectives", prospectives_path %></h2></div>
+
+	<div id="prospective_list">
+
+	<% @prospectives.each do |prospective| %>
+	<%= form_tag :prospectives_search do %>
+
+	<table class = "pretty">
+		<tr><th>First Name: </th><td> <%= prospective.first %></td><td><%= text_field_tag "first", "" %></td></tr>
+		<tr><th>Last Name: </th><td> <%= prospective.last %></td><td><%= text_field_tag "last", "" %></td></tr>
+		<tr><th>Address: </th><td> <%= prospective.street1 %></td><td><%= text_field_tag "address1", "" %></td></tr>
+		<tr><th>E-mail: </th><td> <%= prospective.email %></td><td><%= text_field_tag "email", "" %></td></tr>
+		<tr><th>Home: </th><td> <%= prospective.home_phone %></td><td><%= text_field_tag "home_phone", "" %></td></tr>
+		<tr><th>Cell: </th><td> <%= prospective.mobile_phone %></td><td><%= text_field_tag "mobile_phone", "" %></td></tr>
+		<tr><th>Date of Birth: </th><td> <%= prospective.dob %></td><td><%= text_field_tag "dob", "" %></td></tr>
+		<tr><th>Instrument:</th><td> <%= prospective.instrument %></td><td><%= text_field_tag "instrument", "" %></td></tr>
+
+
+		<tr><td><%= link_to 'Show', prospective %>      
+		      <%= link_to 'Edit', edit_prospective_path(prospective) %>
+		      <%= link_to 'Destroy', prospective, :confirm => 'Are you sure?', :method => :delete %></td><td></td><td>
+		<% [ 'And', 'or' ].each do |andor| %>
+			<%= radio_button_tag 'andor', andor, @andor == andor %>
+			<%= andor.humanize %>
+		<% end %>
+		<%= submit_tag "Go" %></td></tr>	</table>
+	<% end %>
+	<% end %>
+
+
+	
+	</div>
+	<br />
+
+	<%= link_to 'New prospective', new_prospective_path %>
+	<p> Phone numbers not searchable </p>
+	
+	<div id="user_nav">
+	<% if user_signed_in? %>
+		Signed in as <%= current_user.email %>.  Not You?
+		<%= link_to "Sign out", destroy_user_session_path %>
+	<% else %>
+		<%= link_to "Sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %>.
+	<% end %>
+</div>
+<% else %>
+	<div class = 'error'>
+	<p> This page does not exist </p>
+	</div>
+<% end %>
+<% else %>
+	<div class = 'error'>
+	<p> This page does not exist </p>
+	</div>
+<% end %>
