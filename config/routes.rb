@@ -3,7 +3,7 @@ Pluggedin4::Application.routes.draw do
 	  match 'others/search' => 'others#search', :as => :others_search
 
   resources :prospectives
-	  match 'prospectives/search' => 'others#search', :as => :prospectives_search
+	  match 'prospectives/search' => 'prospectives#search', :as => :prospectives_search
 
   devise_for :users
 

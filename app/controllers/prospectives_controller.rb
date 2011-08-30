@@ -80,4 +80,50 @@ class ProspectivesController < ApplicationController
       format.json { head :ok }
     end
   end
+
+def search
+  #within prospectives
+  #phone numbers not searchable
+  
+  #Search Options:  And/Or,  DOB(<, =, or >)
+  	@first = params['first'].downcase
+	@last = params['last'].downcase
+	@address1 = params['address1'].downcase
+	@home_email = params['email'].downcase
+	@prospectives = Prospective.all
+	@results = []
+	if params[:andor]
+		@andor = params[:andor].downcase
+	end
+
+	#"AND" search
+	if @andor == 'and'
+		@prospectives.each do |prospective|
+			if prospective.first.downcase.include? @first and prospective.street1.downcase.include? @address1 and prospective.email.downcase.include? @home_email and prospective.last.downcase.include? @last
+				@results << prospective
+			end
+		end
+	else  # makes "OR" the default search
+	
+	#"OR" search
+
+		@prospectives.each do |prospective|
+			if @first != '' and prospective.first.downcase.include? @first  #Check for empty to avoid false positive ("" does include "")
+				@results << prospective
+			elsif @last != '' and prospective.last.downcase.include? @last
+				@results << prospective
+			elsif @address1 != '' and prospective.street1.downcase.include? @address1
+				@results << prospective
+			elsif @home_email != '' and prospective.email.downcase.include? @home_email
+				@results << prospective
+			end
+		end
+	end
+
+	
+    respond_to do |format|
+      format.html # search.html.erb
+      format.xml  { render :xml => @results }
+    end
+  end
 end
