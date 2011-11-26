@@ -113,7 +113,7 @@
   </div>
 
 <!-- Types of Contacts -->
-Check all of the following boxes that interest you:
+Check all of the following boxes that might apply to you:
 
 <table><tr>
   <td><div class="field">
@@ -128,10 +128,7 @@ Check all of the following boxes that interest you:
     <%= f.label :community_contact %>
     <%= f.check_box :community_contact %>
   </div></td>
-  <td><div class="field">
-    <%= f.label :competition %>
-    <%= f.check_box :competition %>
-  </div></td>
+
 </tr><tr>
 
   <td><div class="field">
@@ -145,10 +142,6 @@ Check all of the following boxes that interest you:
   <div class="field">
     <%= f.label :donor %>
     <%= f.check_box :donor %>
-  </div></td><td>
-  <div class="field">
-    <%= f.label :foundation %>
-    <%= f.check_box :foundation %>
   </div></td>
   </tr><tr>
 
@@ -164,15 +157,11 @@ Check all of the following boxes that interest you:
     <%= f.label :teacher %>
     <%= f.check_box :teacher %>
   </div></td><td>
-  <div class="field">
-    <%= f.label :raised_money_for %>
-    <%= f.check_box :raised_money_for %>
-  </div></td>
   </tr><tr>
 
   <td><div class="field">
-    <%= f.label :performed_for %>
-    <%= f.check_box :performed_for %>
+    <%= f.label "Technical Help" %>
+    <%= f.check_box :tech %>
   </div></td><td>
   <div class="field">
     <%= f.label :partner %>
@@ -181,10 +170,6 @@ Check all of the following boxes that interest you:
   <div class="field">
     <%= f.label :professional %>
     <%= f.check_box :professional %>
-  </div></td><td>
-  <div class="field">
-    <%= f.label :plugged_in_teacher %>
-    <%= f.check_box :plugged_in_teacher %>
   </div></td>
   </tr><tr>
 
@@ -199,10 +184,6 @@ Check all of the following boxes that interest you:
   <div class="field">
     <%= f.label :staff %>
     <%= f.check_box :staff %>
-  </div></td><td>
-  <div class="field">
-    <%= f.label :tech %>
-    <%= f.check_box :tech %>
   </div></td>
   </tr><tr>
   <td><div class="field">
@@ -217,6 +198,20 @@ Check all of the following boxes that interest you:
     <%= f.label :youth_arts_nonprofit %>
     <%= f.check_box :youth_arts_nonprofit %>
   </div></td>
+  </tr>
+  <tr>  <td><div class="field">
+    <%= f.label :competition %>
+    <%= f.check_box :competition %>
+  </div></td><td>
+  <div class="field">
+    <%= f.label :foundation %>
+    <%= f.check_box :foundation %>
+  </div></td><td>
+  <div class="field">
+    <%= f.label :plugged_in_teacher %>
+    <%= f.check_box :plugged_in_teacher %>
+  </div></td>
+
   </tr>
   </table>
   <div class="actions">

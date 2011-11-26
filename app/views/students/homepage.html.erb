@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Ruby on Rails: Welcome aboard</title>
+    <title>Plugged In Sign Up</title>
     <style type="text/css" media="screen">
       body {
         margin: 0;
@@ -27,8 +27,9 @@
 
 
       #page {
-        background-color: #b0b0b0;
+        background-color: white;
         width: 750px;
+	height: 1000px;
         margin: 0;
         margin-left: auto;
         margin-right: auto;
@@ -37,7 +38,7 @@
       #content {
         float: left;
         background-color: white;
-        border: 3px solid #aaa;
+        border: 3px solid white;
         border-top: none;
         padding: 25px;
         width: 500px;
@@ -59,7 +60,7 @@
 
 
       #header {
-        background-image: url("/assets/rails.png");
+
         background-repeat: no-repeat;
         background-position: top left;
         height: 64px;
@@ -190,22 +191,18 @@
       <div id="sidebar">
         <ul id="sidebar-items">
           <li>
-            <h3>Sidebar Info Here</h3>
+            <h3>More on Plugged In</h3>
             <ul class="links">
-              <li><a href="http://guides.rubyonrails.org/">Some link</a></li>
-              <li><a href="http://api.rubyonrails.org/">Plugged In Home</a></li>
-              <li><a href="http://www.ruby-doc.org/core/">Help</a></li>
-              <li><a href="http://www.ruby-doc.org/stdlib/"></a></li>
+              <li><a href="http://http://www.pluggedinband.org/">Plugged In Home</a></li>
+              <li><a href="http://http://www.pluggedinband.org/about/">About Plugged In</a></li>
+              <li><a href="mailto:srizkallah@comcast.net">Contact Us</a></li>
             </ul>
           </li>
         </ul>
       </div>
 
       <div id="content">
-        <div id="header">
-          <h1>Welcome aboard</h1>
-          <h2>Plugged In</h2>
-        </div>
+          <h1>Welcome to Plugged In</h1>
 
         <div id="about">
           
@@ -213,24 +210,23 @@
         </div>
 
         <div id="getting-started">
-          <h1>Getting started</h1>
-          <h2>Here&rsquo;s how to get rolling:</h2>
+          <h1>Please choose one of these three options:</h1>
+
           
           <ol>          
             <li>
-              <h2>Would you like to <%= link_to "Register", new_student_path %> for Plugged In?</h2>
-              <p>Thanks!</p>
+              <h2>Do you want to register for a class? <%= link_to "Click Here.", new_student_path %></h2>
             </li>
             
             <li>
-              <h2>Interested in joining Plugged In?  Click <%= link_to "Here", new_prospective_path %> to sign up for information and updates. </h2>
-              <p> We'll contact you about how to join Plugged In.</p>
+              <h2>Are you a prospective student, or the parent of one?  Click <%= link_to "Click Here.", new_prospective_path %> </h2>
             </li>
 
             <li>
-              <h2>Interested in helping out, or just joining the mailing list?  Click <%= link_to "Here", new_other_path %></h2>
-              <p> Sign up to be a Plugged In affiliate, or just receive information about concerts and more!</p>
+              <h2>Are you interested in helping out, or just joining the Mailing List? <%= link_to "Click Here.", new_other_path %></h2>
             </li>
+
+	    <li> <h2>Thank you for your interest! </h2></li>
           </ol>
         </div>
       </div>
@@ -239,3 +235,4 @@
     </div>
   </body>
 </html>
+<!-- #F88405; -->

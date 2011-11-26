@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110917034917) do
+ActiveRecord::Schema.define(:version => 20111123171207) do
 
   create_table "others", :force => true do |t|
     t.string   "first"
@@ -96,7 +96,6 @@ ActiveRecord::Schema.define(:version => 20110917034917) do
     t.string   "dad_cell"
     t.string   "mom_cell"
     t.string   "date_of_birth"
-    t.integer  "age"
     t.string   "mom_name"
     t.string   "dad_name"
     t.string   "parent_names"
@@ -154,6 +153,18 @@ ActiveRecord::Schema.define(:version => 20110917034917) do
     t.boolean  "sun3"
     t.boolean  "sun4"
     t.boolean  "sun5"
+    t.boolean  "primguitar"
+    t.boolean  "primbass"
+    t.boolean  "primkeyboard"
+    t.boolean  "primvocal"
+    t.string   "primother"
+    t.boolean  "secguitar"
+    t.boolean  "secbass"
+    t.boolean  "seckeyboard"
+    t.boolean  "secvocal"
+    t.string   "secother"
+    t.boolean  "primdrums"
+    t.boolean  "secdrums"
   end
 
   create_table "users", :force => true do |t|

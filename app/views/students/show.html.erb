@@ -1,185 +1,93 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <b>Name:</b>
-  <%= @student.name %>
-</p>
-
-<p>
-  <b>Instrument:</b>
-  <%= @student.instrument %>
-</p>
-
-<p>
-  <b>Address:</b>
-  <%= @student.address %>
-</p>
-
-<p>
-  <b>Town:</b>
-  <%= @student.town %>
-</p>
-
-<p>
-  <b>Zip:</b>
-  <%= @student.zip %>
-</p>
-
-<p>
-  <b>Home phone:</b>
-  <%= @student.home_phone %>
-</p>
-
-<p>
-  <b>Cell:</b>
-  <%= @student.cell %>
-</p>
-
-<p>
-  <b>Dad work:</b>
-  <%= @student.dad_work %>
-</p>
-
-<p>
-  <b>Mom work:</b>
-  <%= @student.mom_work %>
-</p>
-
-<p>
-  <b>Dad cell:</b>
-  <%= @student.dad_cell %>
-</p>
-
-<p>
-  <b>Mom cell:</b>
-  <%= @student.mom_cell %>
-</p>
-
-<p>
-  <b>Date of birth:</b>
-  <%= @student.date_of_birth %>
-</p>
-
-<p>
-  <b>Age:</b>
-  <%= @student.age %>
-</p>
-
-<p>
-  <b>Mom name:</b>
-  <%= @student.mom_name %>
-</p>
-
-<p>
-  <b>Dad name:</b>
-  <%= @student.dad_name %>
-</p>
-
-<p>
-  <b>Parent names:</b>
-  <%= @student.parent_names %>
-</p>
-
-<p>
-  <b>Email:</b>
-  <%= @student.email %>
-</p>
-
-<p>
-  <b>Last name:</b>
-  <%= @student.last_name %>
-</p>
-
-<p>
-  <b>Notes:</b>
-  <%= @student.notes %>
-</p>
-
-<p>
-  <b>Conditions:</b>
-  <%= @student.conditions %>
-</p>
-
-<p>
-  <b>Medications:</b>
-  <%= @student.medications %>
-</p>
-
-<p>
-  <b>Parent email:</b>
-  <%= @student.parent_email %>
-</p>
-
-<p>
-  <b>Experience:</b>
-  <%= @student.experience %>
-</p>
-
-<p>
-  <b>Lessons:</b>
-  <%= @student.lessons %>
-</p>
-
-<p>
-  <b>Favorite bands:</b>
-  <%= @student.favorite_bands %>
-</p>
-
-<p>
-  <b>Music style:</b>
-  <%= @student.music_style %>
-</p>
-
-<p>
-  <b>Write music:</b>
-  <%= @student.write_music %>
-</p>
-
-<p>
-  <b>Switching instruments:</b>
-  <%= @student.switching_instruments %>
-</p>
-
-<p>
-  <b>Additional info:</b>
-  <%= @student.additional_info %>
-</p>
-
-<p>
-  <b>Parent rep:</b>
-  <%= @student.parent_rep %>
-</p>
-
-<p>
-  <b>Concert volunteer:</b>
-  <%= @student.concert_volunteer %>
-</p>
-
-<p>
-  <b>Joining board:</b>
-  <%= @student.joining_board %>
-</p>
-
-<p>
-  <b>Donating scholarship:</b>
-  <%= @student.donating_scholarship %>
-</p>
-
-<p>
-  <b>Community engage:</b>
-  <%= @student.community_engage %>
-</p>
-
-<p>
-  <b>Jamathon:</b>
-  <%= @student.jamathon %>
-</p>
-
-<p>
-  <b>Spring fair:</b>
-  <%= @student.spring_fair %>
-</p>
+<% if user_signed_in? %>
+<% else %>
+<h1> Thank you for your Interest in Plugged In </h1><br>
+<h1> Payment Methods </h1>
+<h2> PayPal </h2>
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="F4SNMXMVEVWKW">
+<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_paynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
+<br>
+<h2> Scholarship </h2>
+If you would like to sign up for a scholarship, <br> fill out the
+following form: <br>
+<%= link_to "Plugged In Scholarship", "/scholarship.pdf" %><br>
+and Mail it to:
+Sandra Rizkallah
+Needham, MA 02492
+<br><br>
+<h2> Other </h2>
+<p> To pay by check or cash, contact us at srizkallah@pluggedin.com</p>
+<br><br>
+<% end %>
 
 
+<% if user_signed_in? %>
+<% if current_user.email == 'srizkallah@comcast.net' or current_user.email == 'aheine@olin.edu' %>
+
+<h1> Student Info: </h1>
+
+
+<% student = @student %>
+	<%= form_tag :search do %>
+
+	<table class = "pretty">
+		<tr><th>First Name: </th><td> <%= student.name %></td><td><%= text_field_tag "name", "" %></td></tr>
+		<tr><th>Last Name: </th><td> <%= student.last_name %></td><td><%= text_field_tag "last_name", "" %></td></tr>
+		<tr><th>Address: </th><td> <%= student.address %></td><td><%= text_field_tag "address", "" %></td></tr>
+		<tr><th>E-mail: </th><td> <%= student.email %></td><td><%= text_field_tag "email", "" %></td></tr>
+		<tr><th>Home: </th><td> <%= student.home_phone %></td><td><%= text_field_tag "home_phone", "" %></td></tr>
+		<tr><th>Cell: </th><td> <%= student.cell %></td><td><%= text_field_tag "cell", "" %></td></tr>
+		<tr><th>Dad Work: </th><td> <%= student.dad_work %></td><td><%= text_field_tag "dad_work", "" %></td></tr>
+		<tr><th>Mom Work:</th><td> <%= student.mom_work %></td><td><%= text_field_tag "mom_work", "" %></td></tr>
+		<tr><th>Dad Cell: </th><td> <%= student.dad_cell %></td><td><%= text_field_tag "dad_cell", "" %></td></tr>
+		<tr><th>Mom Cell:</th><td>  <%= student.mom_cell %></td><td><%= text_field_tag "mom_cell", "" %></td></tr>
+		<tr><th>Date of Birth: </th><td> <%= student.date_of_birth %></td><td><%= text_field_tag "dob", "" %></td></tr>
+
+		<tr><th>Primary Instruments: </th><td> 
+		<% if student.primguitar == true %> Guitar, <% end %>
+		<% if student.primbass == true %> Bass, <% end %>
+		<% if student.primkeyboard == true %> Keyboard, <% end %>
+		<% if student.primvocal == true %> Vocals, <% end %>
+		<% if student.primdrums == true %> Drums, <% end %>
+		<%= student.primother %>
+</td><td><%= text_field_tag "primary_instrument", "" %></td></tr>
+
+		<tr><th>Secondary Instruments: </th><td> 
+		<% if student.secguitar == true %> Guitar, <% end %>
+		<% if student.secbass == true %> Bass, <% end %>
+		<% if student.seckeyboard == true %> Keyboard, <% end %>
+		<% if student.secvocal == true %> Vocals, <% end %>
+		<% if student.secdrums == true %> Drums, <% end %>
+		<%= student.secother %>
+</td><td><%= text_field_tag "secondary_instrument", "" %></td></tr>
+
+		<tr><th>Mom: </th><td><%= student.mom_name %></td><td><%= text_field_tag "mom", "" %></td></tr>
+	    	<tr><th>Dad: </th><td><%= student.dad_name %></td><td><%= text_field_tag "dad", "" %></td></tr>
+	    	<tr><th>Parent Email: </th><td><%= student.parent_email %></td><td><%= text_field_tag "p_email", "" %></td></tr>
+	    	<tr><th>Conditions: </th><td><%= student.conditions %></td><td><%= text_field_tag "conditions", "" %></td></tr>
+	    	<tr><th>Medications: </th><td><%= student.medications %></td><td><%= text_field_tag "medications", "" %></td></tr>
+	    	<tr><th>Experience: </th><td><%= student.experience %></td><td><%= text_field_tag "experience", "" %></td></tr>
+	    	<tr><th>Lessons: </th><td><%= student.lessons? ? 'yes' : ''  %></td><td><%= text_field_tag "lessons", "" %></td></tr>
+	    	<tr><th>Favorite Bands: </th><td><%= student.favorite_bands %></td><td><%= text_field_tag "fav_bands", "" %></td></tr>
+	    	<tr><th>Music Style: </th><td><%= student.music_style %></td><td><%= text_field_tag "style", "" %></td></tr>
+	   	<tr><th>Write Music: </th> <td><%= student.write_music? ? 'yes' : ''  %></td><td><%= text_field_tag "write", "" %></td></tr>
+	    	<tr><th>Switch Instruments: </th><td><%= student.switching_instruments? ? 'yes' : '' %></td><td><%= text_field_tag "switch", "" %></td></tr>
+	    	<tr><th>Additional Info: </th><td><%= student.additional_info %></td><td><%= text_field_tag "info", "" %></td></tr>
+	    	<tr><th>Parent Representative: </th><td><%= student.parent_rep? ? 'yes' : ''  %></td><td><%= text_field_tag "parent_rep", "" %></td></tr>
+	    	<tr><th>Concert Volunteer: </th><td><%= student.concert_volunteer? ? 'yes' : ''  %></td><td><%= text_field_tag "concert_vol", "" %></td></tr>
+	    	<tr><th>Joining Board: </th><td><%= student.joining_board? ? 'yes' : ''  %></td><td><%= text_field_tag "board", "" %></td></tr>
+	    	<tr><th>Donating Scholarship: </th><td><%= student.donating_scholarship? ? 'yes' : ''  %></td><td><%= text_field_tag "donate", "" %></td></tr>
+	    	<tr><th>Community Engage: </th><td><%= student.community_engage? ? 'yes' : ''  %></td><td><%= text_field_tag "c_engage", "" %></td></tr>
+	    	<tr><th>Jam A Thon: </th><td><%= student.jamathon? ? 'yes' : ''  %></td><td><%= text_field_tag "jthon", "" %></td></tr>
+	    	<tr><th>Spring Fair: </th><td><%= student.spring_fair? ? 'yes' : ''  %></td><td><%= text_field_tag "spring_fair", "" %></td></tr>
+	    	<tr><th>Notes: </th><td><%= student.notes %></td><td><%= text_field_tag "notes", "" %></td></tr>
+</table>
+
+<% end %>
 <%= link_to 'Edit', edit_student_path(@student) %> |
 <%= link_to 'Back', students_path %>
+<% end %>
+<% end %>
