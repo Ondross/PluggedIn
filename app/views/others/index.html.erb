@@ -12,13 +12,28 @@
 	<table class = "pretty">
 		<tr><th>First Name: </th><td> <%= other.first %></td><td><%= text_field_tag "first", "" %></td></tr>
 		<tr><th>Last Name: </th><td> <%= other.last %></td><td><%= text_field_tag "last", "" %></td></tr>
-		<tr><th>Address: </th><td> <%= other.address1 %></td><td><%= text_field_tag "address1", "" %></td></tr>
+		<tr><th>Address1: </th><td> <%= other.address1 %></td><td><%= text_field_tag "address1", "" %></td></tr>
+		<tr><th>Address2: </th><td> <%= other.address2 %></td><td><%= text_field_tag "address2", "" %></td></tr>
+		<tr><th>Address3: </th><td> <%= other.address3 %></td><td><%= text_field_tag "address3", "" %></td></tr>
+		<tr><th>City: </th><td> <%= other.city %></td><td><%= text_field_tag "City", "" %></td></tr>
+		<tr><th>State: </th><td> <%= other.state %></td><td><%= text_field_tag "State", "" %></td></tr>
+		<tr><th>Zip: </th><td> <%= other.zip %></td><td><%= text_field_tag "Zip", "" %></td></tr>
+		<tr><th>Country: </th><td> <%= other.country %></td><td><%= text_field_tag "Country", "" %></td></tr>
 		<tr><th>E-mail: </th><td> <%= other.home_email %></td><td><%= text_field_tag "home_email", "" %></td></tr>
 		<tr><th>Home: </th><td> <%= other.home_phone %></td><td><%= text_field_tag "home_phone", "" %></td></tr>
 		<tr><th>Cell: </th><td> <%= other.mobile_phone %></td><td><%= text_field_tag "mobile_phone", "" %></td></tr>
 		<tr><th>Work Phone: </th><td> <%= other.work_phone %></td><td><%= text_field_tag "work_phone", "" %></td></tr>
 		<tr><th>Job:</th><td> <%= other.job %></td><td><%= text_field_tag "job", "" %></td></tr>
 		<tr><th>Fax: </th><td> <%= other.fax %></td><td><%= text_field_tag "fax", "" %></td></tr>
+		<tr><th>Work Email: </th><td> <%= other.work_email %></td><td><%= text_field_tag "Work Email:", "" %></td></tr>
+		<tr><th>Work Address1: </th><td> <%= other.work_address1 %></td><td><%= text_field_tag "Work Address1", "" %></td></tr>
+		<tr><th>Work Address2: </th><td> <%= other.work_address2 %></td><td><%= text_field_tag "Work Address2", "" %></td></tr>
+		<tr><th>Work Address3: </th><td> <%= other.work_address3 %></td><td><%= text_field_tag "Work Address3", "" %></td></tr>
+		<tr><th>Work City: </th><td> <%= other.work_city %></td><td><%= text_field_tag "Work City", "" %></td></tr>
+		<tr><th>Work State: </th><td> <%= other.work_state %></td><td><%= text_field_tag "Work State", "" %></td></tr>
+		<tr><th>Work Zip: </th><td> <%= other.work_zip %></td><td><%= text_field_tag "Work Zip", "" %></td></tr>
+		<tr><th>Work Country: </th><td> <%= other.work_country %></td><td><%= text_field_tag "Work Country", "" %></td></tr>
+		
 
 	<tr><th>Type:</th><td><% Other.column_names.each do |column| %>
 		<% if other.send(column) == true %>
@@ -64,3 +79,6 @@
 	<p> This page does not exist </p>
 	</div>
 <% end %>
+
+
+

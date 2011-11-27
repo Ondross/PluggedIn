@@ -24,11 +24,13 @@
     <%= f.text_field :address %>
   </div>
   <div class="field">
-    <%= f.label "Town" %><br />
+
+    <%= f.label "Town*" %><br />
     <%= f.text_field :town %>
   </div>
   <div class="field">
-    <%= f.label "Zip" %><br />
+    <%= f.label "Zip*" %><br />
+
     <%= f.text_field :zip %>
   </div>
   <div class="field">
@@ -36,7 +38,7 @@
     <%= f.text_field :email %>
   </div>
   <div class="field">
-    <%= f.label :home_phone %><br />
+    <%= f.label "Home Phone*" %><br />
     <%= f.text_field :home_phone %>
   </div>
   <div class="field">
@@ -64,23 +66,16 @@
     <%= f.text_field :date_of_birth %>
   </div>
   <div class="field">
-    <%= f.label :instrument %><br />
-    <%= f.text_field :instrument %>
-  </div>
-  <div class="field">
-    <%= f.label "Age*" %><br />
-    <%= f.text_field :age %>
-  </div>
-  <div class="field">
     <%= f.label "Mom Name" %><br />
     <%= f.text_field :mom_name %>
   </div>
+
     <div class="field">
     <%= f.label "Dad Name" %><br />
     <%= f.text_field :dad_name %>
   </div>
   <div class="field">
-    <%= f.label "Parent Email" %><br />
+    <%= f.label "Parent Email*" %><br />
     <%= f.text_field :parent_email %>
   </div>
   <div class="field">
@@ -91,11 +86,14 @@
     <%= f.label "Medications" %><br />
     <%= f.text_field :medications %>
   </div>  
+
+<h2> Music Experience </h2>
   <div class="field">
     <%= f.label "Experience" %><br />
     <%= f.text_field :experience %>
   </div>
   <div class="field">
+
     <%= f.label "Lessons" %><br />
     <%= f.text_field :lessons %>
   </div>
@@ -111,6 +109,17 @@
     <%= f.label "Do you write Music?" %><br />
     <%= f.check_box :write_music %>
   </div>
+
+<table>
+<tr><th>Instrument:  </th><th>Primary:  </th><th>Secondary:</th></tr>
+<tr><td>Guitar</td><td><%= f.check_box :primguitar %></td><td><%= f.check_box :secguitar %></td></tr>
+<tr><td>Bass</td><td><%= f.check_box :primbass %></td><td><%= f.check_box :secbass %></td></tr>
+<tr><td>Keyboard</td><td><%= f.check_box :primkeyboard %></td><td><%= f.check_box :seckeyboard %></td></tr>
+<tr><td>Vocals</td><td><%= f.check_box :primvocal %></td><td><%= f.check_box :secvocal %></td></tr>
+<tr><td>Drums</td><td> <%= f.check_box :primdrums %></td><td><%= f.check_box :secdrums %></td></tr></table>
+<table><th>Other Instrument:</th></table> <%= f.text_field :primother %>
+<br><br>
+
   <div class="field">
     <%= f.label "Are you willing to switch instruments?" %><br />
     <%= f.check_box :switching_instruments %>
@@ -147,6 +156,116 @@
     <%= f.label "Any Additional Info?" %><br />
     <%= f.text_area :additional_info %>
   </div>
+
+
+<table>
+<tr><td>Time:</td><th>Mon</th><th>Tues</th><th>Weds</th><th>Thurs</th><th>Fri</th></tr>
+<tr><th>4:00-5:30</th>
+<td>  <div class="field">
+    <%= f.check_box :mon0 %>
+  </div></td>
+<td><div class="field">
+    <%= f.check_box :tue0 %>
+  </div></td>
+<td><div class="field">
+    <%= f.check_box :wed0 %>
+  </div></td>
+<td><div class="field">
+    <%= f.check_box :thur0 %>
+  </div></td>
+<td><div class="field">
+    <%= f.check_box :fri0 %>
+  </div></td>
+</tr><tr><th>5:30 - 7:00</th>
+<td>  <div class="field">
+    <%= f.check_box :mon1 %>
+  </div></td>
+<td><div class="field">
+    <%= f.check_box :tue1 %>
+  </div></td>
+<td><div class="field">
+    <%= f.check_box :wed1 %>
+  </div></td>
+<td><div class="field">
+    <%= f.check_box :thur1 %>
+  </div></td>
+<td><div class="field">
+    <%= f.check_box :fri1 %>
+  </div></td>
+  </tr><tr><th>7:00 - 8:30</th>
+<td>  <div class="field">
+    <%= f.check_box :mon2 %>
+  </div></td>
+<td><div class="field">
+    <%= f.check_box :tue2 %>
+  </div></td>
+<td><div class="field">
+    <%= f.check_box :wed2 %>
+  </div></td>
+<td><div class="field">
+    <%= f.check_box :thur2 %>
+  </div></td>
+<td><div class="field">
+    <%= f.check_box :fri2 %>
+  </div></td>
+  </tr><tr><th>8:30 - 10:00</th>
+<td>  <div class="field">
+    <%= f.check_box :mon3 %>
+  </div></td>
+<td><div class="field">
+    <%= f.check_box :tue3 %>
+  </div></td>
+<td><div class="field">
+    <%= f.check_box :wed3 %>
+  </div></td>
+<td><div class="field">
+    <%= f.check_box :thur3 %>
+  </div></td>
+<td><div class="field">
+    <%= f.check_box :fri3 %>
+  </div></td>
+  </tr><tr>
+  </tr>
+<tr><td></td> <th>Sat</th> <th>Sun</th></tr>
+<tr><th>11:00 - 12:30</th>
+<td><div class="field">
+    <%= f.check_box :sat0 %>
+  </div>  </td><td> <div class="field">
+    <%= f.check_box :sun0 %>
+  </div> </td>
+</tr><tr><th>12:30 - 2:00</th>
+<td><div class="field">
+    <%= f.check_box :sat1 %>
+  </div>  </td><td><div class="field">
+    <%= f.check_box :sun1 %>
+  </div>  </td>
+</tr><tr><th>2:00 - 3:30</th>
+<td> <div class="field">
+    <%= f.check_box :sat2 %>
+  </div> </td><td>  <div class="field">
+    <%= f.check_box :sun2 %>
+  </div></td>
+</tr><tr><th>3:30 - 5:00 </th>
+<td> <div class="field">
+    <%= f.check_box :sat3 %>
+  </div> </td><td> <div class="field">
+    <%= f.check_box :sun3 %>
+  </div> </td>
+</tr><tr><th>5:00 - 6:30 </th>
+<td><div class="field">
+    <%= f.check_box :sat4 %>
+  </div>  </td><td><div class="field">
+    <%= f.check_box :sun4 %>
+  </div>  </td>
+</tr><tr><th> 6:30 - 8:00 </th>
+<td> <div class="field">
+    <%= f.check_box :sat5 %>
+  </div> </td><td><div class="field">
+    <%= f.check_box :sun5 %>
+  </div>  </td>
+</tr>
+  </table>
+
 
 
 <% if user_signed_in? %>

@@ -1,5 +1,32 @@
-<h1>New Interested Student</h1>
+<head>
+<style>
+body{
+background-image:url(<%= image_path("sign_up2.png") %>);
+}
 
+.registration{
+position: relative;
+left:360px;
+top:200px;
+}
+
+.heading{
+position: relative;
+left:320px;
+top:195px;
+}
+
+</style>
+</head>
+
+<body>
+<div class = 'heading'>
+<h1>Register</h1><p> *Required Field </p>
+</div>
+
+<div class = 'registration'>
 <%= render 'form' %>
 
-<%= link_to 'Back', prospectives_path %>
+</div>
+
+</body>

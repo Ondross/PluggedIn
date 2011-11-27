@@ -2,12 +2,13 @@ class StudentsController < ApplicationController
   # GET /students
   # GET /students.xml
   def index
-    @students = Student.all
+	redirect_to :contact_list
+   # @students = Student.all
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @students }
-    end
+   # respond_to do |format|
+      #format.html # index.html.erb
+      #format.xml  { render :xml => @students }
+   # end
   end
 
   def homepage

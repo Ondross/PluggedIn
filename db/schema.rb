@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110826163057) do
+ActiveRecord::Schema.define(:version => 20111123171207) do
 
   create_table "others", :force => true do |t|
     t.string   "first"
@@ -96,7 +96,6 @@ ActiveRecord::Schema.define(:version => 20110826163057) do
     t.string   "dad_cell"
     t.string   "mom_cell"
     t.string   "date_of_birth"
-    t.integer  "age"
     t.string   "mom_name"
     t.string   "dad_name"
     t.string   "parent_names"
@@ -122,6 +121,50 @@ ActiveRecord::Schema.define(:version => 20110826163057) do
     t.boolean  "spring_fair"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "mon0"
+    t.boolean  "mon1"
+    t.boolean  "mon2"
+    t.boolean  "mon3"
+    t.boolean  "tue0"
+    t.boolean  "tue1"
+    t.boolean  "tue2"
+    t.boolean  "tue3"
+    t.boolean  "wed0"
+    t.boolean  "wed1"
+    t.boolean  "wed2"
+    t.boolean  "wed3"
+    t.boolean  "thur0"
+    t.boolean  "thur1"
+    t.boolean  "thur2"
+    t.boolean  "thur3"
+    t.boolean  "fri0"
+    t.boolean  "fri1"
+    t.boolean  "fri2"
+    t.boolean  "fri3"
+    t.boolean  "sat0"
+    t.boolean  "sat1"
+    t.boolean  "sat2"
+    t.boolean  "sat3"
+    t.boolean  "sat4"
+    t.boolean  "sat5"
+    t.boolean  "sun0"
+    t.boolean  "sun1"
+    t.boolean  "sun2"
+    t.boolean  "sun3"
+    t.boolean  "sun4"
+    t.boolean  "sun5"
+    t.boolean  "primguitar"
+    t.boolean  "primbass"
+    t.boolean  "primkeyboard"
+    t.boolean  "primvocal"
+    t.string   "primother"
+    t.boolean  "secguitar"
+    t.boolean  "secbass"
+    t.boolean  "seckeyboard"
+    t.boolean  "secvocal"
+    t.string   "secother"
+    t.boolean  "primdrums"
+    t.boolean  "secdrums"
   end
 
   create_table "users", :force => true do |t|

@@ -6,70 +6,33 @@
 
 	<div id="student_list">
 
-	<% @students.each do |student| %>
-	<%= form_tag :search do %>
 
 	<table class = "pretty">
-		<tr><th>First Name: </th><td> <%= student.name %></td><td><%= text_field_tag "name", "" %></td></tr>
-		<tr><th>Last Name: </th><td> <%= student.last_name %></td><td><%= text_field_tag "last_name", "" %></td></tr>
-		<tr><th>Address: </th><td> <%= student.address %></td><td><%= text_field_tag "address", "" %></td></tr>
-		<tr><th>E-mail: </th><td> <%= student.email %></td><td><%= text_field_tag "email", "" %></td></tr>
-		<tr><th>Home: </th><td> <%= student.home_phone %></td><td><%= text_field_tag "home_phone", "" %></td></tr>
-		<tr><th>Cell: </th><td> <%= student.cell %></td><td><%= text_field_tag "cell", "" %></td></tr>
-		<tr><th>Dad Work: </th><td> <%= student.dad_work %></td><td><%= text_field_tag "dad_work", "" %></td></tr>
-		<tr><th>Mom Work:</th><td> <%= student.mom_work %></td><td><%= text_field_tag "mom_work", "" %></td></tr>
-		<tr><th>Dad Cell: </th><td> <%= student.dad_cell %></td><td><%= text_field_tag "dad_cell", "" %></td></tr>
-		<tr><th>Mom Cell:</th><td>  <%= student.mom_cell %></td><td><%= text_field_tag "mom_cell", "" %></td></tr>
-		<tr><th>Date of Birth: </th><td> <%= student.date_of_birth %></td><td><%= text_field_tag "dob", "" %></td></tr>
-		<tr><th>Instruments Played: </th><td> <%= student.instrument %></td><td><%= text_field_tag "instruments_played", "" %></td></tr>
-		<tr><th>Age: </th><td><%= student.age %></td><td><%= text_field_tag "age", "" %></td></tr>
-		<tr><th>Mom: </th><td><%= student.mom_name %></td><td><%= text_field_tag "mom", "" %></td></tr>
-	    	<tr><th>Dad: </th><td><%= student.dad_name %></td><td><%= text_field_tag "dad", "" %></td></tr>
-	    	<tr><th>Parent Email: </th><td><%= student.parent_email %></td><td><%= text_field_tag "p_email", "" %></td></tr>
-	    	<tr><th>Conditions: </th><td><%= student.conditions %></td><td><%= text_field_tag "conditions", "" %></td></tr>
-	    	<tr><th>Medications: </th><td><%= student.medications %></td><td><%= text_field_tag "medications", "" %></td></tr>
-	    	<tr><th>Experience: </th><td><%= student.experience %></td><td><%= text_field_tag "experience", "" %></td></tr>
-	    	<tr><th>Lessons: </th><td><%= student.lessons %></td><td><%= text_field_tag "lessons", "" %></td></tr>
-	    	<tr><th>Favorite Bands: </th><td><%= student.favorite_bands %></td><td><%= text_field_tag "fav_bands", "" %></td></tr>
-	    	<tr><th>Music Style: </th><td><%= student.music_style %></td><td><%= text_field_tag "style", "" %></td></tr>
-	   	<tr><th>Write Music: </th> <td><%= student.write_music %></td><td><%= text_field_tag "write", "" %></td></tr>
-	    	<tr><th>Switch Instruments: </th><td><%= student.switching_instruments %></td><td><%= text_field_tag "switch", "" %></td></tr>
-	    	<tr><th>Additional Info: </th><td><%= student.additional_info %></td><td><%= text_field_tag "info", "" %></td></tr>
-	    	<tr><th>Parent Representative: </th><td><%= student.parent_rep %></td><td><%= text_field_tag "parent_rep", "" %></td></tr>
-	    	<tr><th>Concert Volunteer: </th><td><%= student.concert_volunteer %></td><td><%= text_field_tag "concert_vol", "" %></td></tr>
-	    	<tr><th>Joining Board: </th><td><%= student.joining_board %></td><td><%= text_field_tag "board", "" %></td></tr>
-	    	<tr><th>Donating Scholarship: </th><td><%= student.donating_scholarship %></td><td><%= text_field_tag "donate", "" %></td></tr>
-	    	<tr><th>Community Engage: </th><td><%= student.community_engage %></td><td><%= text_field_tag "c_engage", "" %></td></tr>
-	    	<tr><th>Jam A Thon: </th><td><%= student.jamathon %></td><td><%= text_field_tag "jthon", "" %></td></tr>
-	    	<tr><th>Spring Fair: </th><td><%= student.spring_fair %></td><td><%= text_field_tag "spring_fair", "" %></td></tr>
-	    	<tr><th>Notes: </th><td><%= student.notes %></td><td><%= text_field_tag "notes", "" %></td></tr>
 
-		<tr><td><%= link_to 'Show', student %>      
+		<tr><th>First Name: </th><th>Last Name: </th><th>E-mail: </th><th>Home: </th><th>Do: </th></tr>
+	<% @students.each do |student| %>
+
+	<td> <%= student.name %></td>
+		<td> <%= student.last_name %></td>
+		<td> <%= student.email %></td>
+		<td> <%= student.home_phone %></td>
+		<td><%= link_to 'Show', student %>      
+
 		      <%= link_to 'Edit', edit_student_path(student) %>
-		      <%= link_to 'Destroy', student, :confirm => 'Are you sure?', :method => :delete %></td><td></td><td>
-		<% [ 'And', 'or' ].each do |andor| %>
-			<%= radio_button_tag 'andor', andor, @andor == andor %>
-			<%= andor.humanize %>
-		<% end %>
-		<%= submit_tag "Go" %></td></tr>	</table>
-	<% end %>
-	<% end %>
+		      <%= link_to 'Destroy', student, :confirm => 'Are you sure?', :method => :delete %></td></tr>
 
+	<% end %>
+</table>
 
 	
 	</div>
 	<br />
 
 	<%= link_to 'New Student', new_student_path %>
-	<p> Phone numbers not searchable </p>
+
 	
 	<div id="user_nav">
-	<% if user_signed_in? %>
-		Signed in as <%= current_user.email %>.  Not You?
-		<%= link_to "Sign out", destroy_user_session_path %>
-	<% else %>
-		<%= link_to "Sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %>.
-	<% end %>
+	
 </div>
 <% else %>
 	<div class = 'error'>

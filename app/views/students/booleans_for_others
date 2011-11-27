@@ -1,0 +1,25 @@
+
+
+<tr><th>Fundraiser: </th><td> <%= other.fundraiser? ? 'yes':'' %></td><td><%= text_field_tag "Fundraiser", "" %></td></tr>
+		<tr><th>Board Member: </th><td> <%= other.board_member? ? 'yes':'' %></td><td><%= text_field_tag "Board Member", "" %></td></tr>
+		<tr><th>Community Contact: </th><td> <%= other.community_contact? ? 'yes':'' %></td><td><%= text_field_tag "Community Contact", "" %></td></tr>
+		<tr><th>Competition: </th><td> <%= other.competition? ? 'yes':'' %></td><td><%= text_field_tag "Competition", "" %></td></tr>
+		<tr><th>Consultant: </th><td> <%= other.consultant? ? 'yes':'' %></td><td><%= text_field_tag "Consultant", "" %></td></tr>
+		<tr><th>Cross Cultural: </th><td> <%= other.cross_cultural? ? 'yes':'' %></td><td><%= text_field_tag "Cross Cultural", "" %></td></tr>
+		<tr><th>Donor: </th><td> <%= other.donor? ? 'yes':'' %></td><td><%= text_field_tag "Donor", "" %></td></tr>
+		<tr><th>Foundation: </th><td> <%= other.foundation? ? 'yes':'' %></td><td><%= text_field_tag "Foundation", "" %></td></tr>
+		<tr><th>Grantwriter: </th><td> <%= other.grantwriter? ? 'yes':'' %></td><td><%= text_field_tag "Grantwriter", "" %></td></tr>
+		<tr><th>Music Contact: </th><td> <%= other.music_contact? ? 'yes':'' %></td><td><%= text_field_tag "Music Contact", "" %></td></tr>
+		<tr><th>Teacher: </th><td> <%= other.teacher? ? 'yes':'' %></td><td><%= text_field_tag "Teacher", "" %></td></tr>
+		<tr><th>Raised Money For: </th><td> <%= other.raised_money_for? ? 'yes':'' %></td><td><%= text_field_tag "Raised Money For", "" %></td></tr>
+		<tr><th>Performed For: </th><td> <%= other.performed_for? ? 'yes':'' %></td><td><%= text_field_tag "Performed For", "" %></td></tr>
+		<tr><th>Partner: </th><td> <%= other.partner? ? 'yes':'' %></td><td><%= text_field_tag "Partner", "" %></td></tr>
+		<tr><th>Professional: </th><td> <%= other.professional? ? 'yes':'' %></td><td><%= text_field_tag "Professional", "" %></td></tr>
+		<tr><th>Plugged In Teacher: </th><td> <%= other.plugged_in_teacher? ? 'yes':'' %></td><td><%= text_field_tag "Plugged In Teacher", "" %></td></tr>
+		<tr><th>Publicity: </th><td> <%= other.publicity? ? 'yes':'' %></td><td><%= text_field_tag "Publicity", "" %></td></tr>
+		<tr><th>Speaker: </th><td> <%= other.speaker? ? 'yes':'' %></td><td><%= text_field_tag "Speaker", "" %></td></tr>
+		<tr><th>Staff: </th><td> <%= other.staff? ? 'yes':'' %></td><td><%= text_field_tag "Staff", "" %></td></tr>
+		<tr><th>Tech: </th><td> <%= other.tech? ? 'yes':'' %></td><td><%= text_field_tag "tech", "" %></td></tr>
+		<tr><th>venue: </th><td> <%= other.venue? ? 'yes':'' %></td><td><%= text_field_tag "venue", "" %></td></tr>
+		<tr><th>Volunteer: </th><td> <%= other.volunteer? ? 'yes':'' %></td><td><%= text_field_tag "volunteer", "" %></td></tr>
+		<tr><th>Youth Arts Nonprofit: </th><td> <%= other.youth_arts_nonprofit? ? 'yes':'' %></td><td><%= text_field_tag "youth_arts_nonprofit", "" %></td></tr>

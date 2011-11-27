@@ -1,5 +1,9 @@
-<p id="notice"><%= notice %></p>
+<% if user_signed_in? %>
+<% else %>
+<h1> Thank you for your Interest in Plugged In </h1><br>
 
+<% end %>
+<h2> Contact Info </h2>
 <p>
   <b>First:</b>
   <%= @other.first %>
@@ -240,6 +244,10 @@
   <%= @other.youth_arts_nonprofit %>
 </p>
 
+<% if user_signed_in? %>
+<% if current_user.email == 'srizkallah@comcast.net' or current_user.email == 'aheine@olin.edu' %>
 
 <%= link_to 'Edit', edit_other_path(@other) %> |
 <%= link_to 'Back', others_path %>
+<% end %>
+<% end %>
