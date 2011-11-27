@@ -1,0 +1,27 @@
+student has many sessions
+session has many students?
+probably unnecessary
+
+current session?  Put it in the students controller,  if months = range => season, also current year == year?
+must work out this actual logic.
+
+CONTROLLER:
+for |student| in Students.All:
+	if student == newstudent   (not the same entry though)
+		for attribute in newstudent:
+			if empty, replace with student.attribute
+		delete student
+
+create a new Session.  All the old ones will be remembered.
+
+MODEL:
+make Session model.  Year, Season, Student.first + Student.last
+
+
+StudentsView:
+for |Student|
+	for Session.All
+		if session.student == Student
+			%= Session.year + Session.season
+
+MAKE SESSION VIEW HIDDEN
