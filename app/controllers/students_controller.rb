@@ -68,6 +68,18 @@ class StudentsController < ApplicationController
   def create
     @student = Student.new(params[:student])
 
+	Student.all.each do |oldStudent|
+		if oldStudent.name == @student.name and oldStudent.last_name == @student.last_name
+	#		@student.attributes.each_pair do |param, val|
+	#			att = param.to_sym
+    	#			@student.send(att) = 'repitez'
+	#		end
+			
+			oldStudent.destroy
+		end
+	end
+			
+
     respond_to do |format|
       if @student.save
         format.html { redirect_to(@student, :notice => 'Student was successfully created.') }

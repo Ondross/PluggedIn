@@ -15,7 +15,7 @@ for |student| in Students.All:
 create a new Session.  All the old ones will be remembered.
 
 MODEL:
-make Session model.  Year, Season, Student.first + Student.last
+make Participation model.  Year, Season, Student.first + Student.last
 
 
 StudentsView:
@@ -25,3 +25,5 @@ for |Student|
 			%= Session.year + Session.season
 
 MAKE SESSION VIEW HIDDEN
+
+Don't call it "Session" you idgit!
