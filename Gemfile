@@ -9,6 +9,7 @@ gem 'sqlite3'
 gem 'devise', '1.4.2'
 gem 'therubyracer'
 gem 'json'
+gem 'pg'
 
 # Gems used only for assets and not required
 # in production environments by default.
