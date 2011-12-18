@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>First:</b>
+  <%= @participant.first %>
+</p>
+
+<p>
+  <b>Last:</b>
+  <%= @participant.last %>
+</p>
+
+<p>
+  <b>Year:</b>
+  <%= @participant.year %>
+</p>
+
+<p>
+  <b>Season:</b>
+  <%= @participant.season %>
+</p>
+
+<%= link_to 'Edit', edit_participant_path(@participant) %> |
+<%= link_to 'Back', participants_path %>

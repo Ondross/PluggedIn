@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111123171207) do
+ActiveRecord::Schema.define(:version => 20111210174048) do
 
   create_table "others", :force => true do |t|
     t.string   "first"
@@ -65,6 +65,15 @@ ActiveRecord::Schema.define(:version => 20111123171207) do
     t.datetime "updated_at"
   end
 
+  create_table "participants", :force => true do |t|
+    t.string   "first"
+    t.string   "last"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "season"
+    t.integer  "year"
+  end
+
   create_table "prospectives", :force => true do |t|
     t.string   "first"
     t.string   "last"
@@ -79,6 +88,14 @@ ActiveRecord::Schema.define(:version => 20111123171207) do
     t.string   "mobile_phone"
     t.date     "dob"
     t.string   "instrument"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "sessions", :force => true do |t|
+    t.integer  "year"
+    t.string   "season"
+    t.string   "student"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

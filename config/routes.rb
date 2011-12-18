@@ -1,4 +1,6 @@
 Pluggedin4::Application.routes.draw do
+  resources :participants
+
   resources :others
 	  match 'others/search' => 'others#search', :as => :others_search
 

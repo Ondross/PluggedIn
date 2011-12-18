@@ -84,6 +84,21 @@ Needham, MA 02492
 	    	<tr><th>Jam A Thon: </th><td><%= student.jamathon? ? 'yes' : ''  %></td><td><%= text_field_tag "jthon", "" %></td></tr>
 	    	<tr><th>Spring Fair: </th><td><%= student.spring_fair? ? 'yes' : ''  %></td><td><%= text_field_tag "spring_fair", "" %></td></tr>
 	    	<tr><th>Notes: </th><td><%= student.notes %></td><td><%= text_field_tag "notes", "" %></td></tr>
+		<tr><th>Sessions: </th>
+
+<td><% Participant.all.each do |participant| %>
+	<% if participant.first == student.name and participant.last == student.last_name %>
+		<%= participant.season %>
+		<%= participant.year %>,
+	<% end %>
+<% end %></td>
+
+<td> <%= text_field_tag "notes", "" %> </td> </tr>
+<tr> <td></td><td></td><td><% [ 'And', 'or' ].each do |andor| %>
+			<%= radio_button_tag 'andor', andor, @andor == andor %>
+			<%= andor.humanize %>
+		<% end %>
+		<%= submit_tag "Go" %></td></tr>
 </table>
 
 <% end %>

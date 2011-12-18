@@ -63,10 +63,22 @@ class StudentsController < ApplicationController
     @student = Student.find(params[:id])
   end
 
-  # POST /students
+  # POST /studentsrails
   # POST /students.xml
   def create
     @student = Student.new(params[:student])
+	@participant = Participant.create()
+	@participant.first = @student.name
+	@participant.last = @student.last_name
+	#if Time.month < 6
+		@participant.season = Time.now.strftime('%m')
+	#else
+	#	@participant.season = "Fall"
+	#end
+	@participant.year = Time.now.strftime('%Y')
+	@student.participants << @participant
+	
+
 
 	Student.all.each do |oldStudent|
 		if oldStudent.name == @student.name and oldStudent.last_name == @student.last_name
@@ -153,6 +165,11 @@ class StudentsController < ApplicationController
 	@email = params[:email].downcase
 	@dob = params[:dob]
 	@last_name = params[:last_name].downcase
+	@conditions = params[:conditions].downcase
+	@medications = params[:medications].downcase
+	@sec_inst = params[:secondary_instrument].downcase
+	@prim_inst = params[:primary_instrument].downcase
+
 	@students = Student.all
 	@results = []
 	if params[:andor]
@@ -162,26 +179,26 @@ class StudentsController < ApplicationController
 	#"AND" search
 	if @andor == 'and'
 		@students.each do |student|
-			if student.name.downcase.include? @name and student.address.downcase.include? @address and student.email.downcase.include? @email and student.last_name.downcase.include? @last_name
-				if @dob.include? ">"
-					@dob = @dob.delete ">"
-					if student.date_of_birth > @dob
-						@results << student
-					end
-				elsif @dob.include? "<"
-					@dob = @dob.delete "<"
-					if student.date_of_birth > @dob
-						@results << student
-					end
-				elsif @dob.include? "="
-					@dob = @dob.delete "="
-					if student.date_of_birth == @dob
-						@results << student
-					end
-				else
-					if student.date_of_birth.include? @dob
-						@results << student
-					end
+			if student.name.downcase.include? @name and student.address.downcase.include? @address and student.email.downcase.include? @email and student.last_name.downcase.include? @last_name and student.conditions.downcase.include? @conditions and student.medications.downcase.include? @medications
+					if @dob.include? ">"
+						@dob = @dob.delete ">"
+						if student.date_of_birth > @dob
+							@results << student
+						end
+					elsif @dob.include? "<"
+						@dob = @dob.delete "<"
+						if student.date_of_birth > @dob
+							@results << student
+						end
+					elsif @dob.include? "="
+						@dob = @dob.delete "="
+						if student.date_of_birth == @dob
+							@results << student
+						end
+					else
+						if student.date_of_birth.include? @dob
+							@results << student
+						end
 				end
 			end
 		end
@@ -197,6 +214,34 @@ class StudentsController < ApplicationController
 			elsif @address != '' and student.address.downcase.include? @address
 				@results << student
 			elsif @email != '' and student.email.downcase.include? @email
+				@results << student
+			elsif @conditions != '' and student.conditions.downcase.include? @conditions
+				@results << student
+			elsif @medications != '' and students.medication.downcase.include? @medications
+				@results << student
+			elsif @prim_inst == "drums" and student.primdrums == true
+				@results << student
+			elsif @prim_inst == "keyboard" and student.primkeyboard == true
+				@results << student
+			elsif @prim_inst == "piano" and student.primkeyboard == true
+				@results << student
+			elsif @prim_inst == "guitar" and student.primguitar == true
+				@results << student
+			elsif @prim_inst == "bass" and student.primbass == true
+				@results << student
+			elsif @prim_inst == "vocals" and student.primvocal == true
+				@results << student
+			elsif @sec_inst == "drums" and student.secdrums == true
+				@results << student
+			elsif @sec_inst == "keyboard" and student.seckeyboard == true
+				@results << student
+			elsif @sec_inst == "piano" and student.seckeyboard == true
+				@results << student
+			elsif @sec_inst == "guitar" and student.secguitar == true
+				@results << student
+			elsif @sec_inst == "bass" and student.secbass == true
+				@results << student
+			elsif @sec_inst == "vocals" and student.secvocal == true
 				@results << student
 			elsif @dob != ''
 				if @dob.include? ">"
